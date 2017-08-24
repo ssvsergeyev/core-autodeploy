@@ -234,7 +234,10 @@ enable_service mysql
 # set up rrdtool, etc.
 
 echo "Enabling rpmforge repo..."
-try wget http://apt.sw.be/redhat/$els/en/$arch/rpmforge/RPMS/rpmforge-release-0.5.3-1.$els.rf.$arch.rpm
+# apt.sw.be seems dead for years, so replace with mirror
+# try wget http://apt.sw.be/redhat/$els/en/$arch/rpmforge/RPMS/rpmforge-release-0.5.3-1.$els.rf.$arch.rpm
+try wget http://http://repository.it4i.cz/mirrors/repoforge/redhat/$els/en/$arch/rpmforge/RPMS/rpmforge-release-0.5.3-1.$els.rf.$arch.rpm
+
 try yum --nogpgcheck -y localinstall rpmforge-release-0.5.3-1.$els.rf.$arch.rpm
 disable_repo rpmforge
 	
