@@ -9,8 +9,11 @@ for you. It will download Java, MySQL, Zenoss Core 4, all RPM dependencies, and
 install everything including the Zenoss Core ZenPacks. To use, perform the
 following steps on a fresh CentOS or Red Hat Enterprise Linux installation::
 
- # cd /tmp
- # chmod +x core-autodeploy-4.2.sh
+ # yum -y install epel-release
+ # yum -y install python-rpm-macros python2-rpm-macros
+ # wget https://github.com/ssvsergeyev/core-autodeploy/tarball/4.2.5 -O auto.tar.gz
+ # tar xvf auto.tar.gz
+ # cd zenoss-core-autodeploy-*
  # ./core-autodeploy-4.2.sh
 
 The script will take several minutes (around 10-30) to complete. When done, you
